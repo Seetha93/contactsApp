@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name selfLearningApp.controller:MainCtrl
+ * @name contactsApp.controller:MainCtrl
  * @description
  * # MainCtrl
- * Controller of the selfLearningApp
+ * Controller of the contactsApp
  */
-angular.module('selfLearningApp')
+angular.module('contactsApp')
   .controller('MainCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',

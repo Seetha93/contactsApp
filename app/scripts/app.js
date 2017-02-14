@@ -2,14 +2,14 @@
 
 /**
  * @ngdoc overview
- * @name selfLearningApp
+ * @name contactsApp
  * @description
- * # selfLearningApp
+ * # contactsApp
  *
  * Main module of the application.
  */
 angular
-  .module('selfLearningApp', [
+  .module('contactsApp', [
     'ngAnimate',
     'ngAria',
     'ngCookies',
