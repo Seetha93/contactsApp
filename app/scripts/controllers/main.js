@@ -2,9 +2,9 @@
 
 /**
  * @ngdoc function
- * @name contactsApp.controller:MainCtrl
+ * @name contactsApp.controller:mainContactsController
  * @description
- * # MainCtrl
+ * # mainContactsController
  * Controller of the contactsApp
  */
 contactsApp.controller('mainContactsController', [

@@ -27,17 +27,6 @@ var contactsApp = angular
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        // controller: 'mainContactsController',
-        // controllerAs: 'mainContactsController'
-      })
-      .when('/favorites', {
-        templateUrl: 'views/favorites.html',
-        // controller: 'favoritesController'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
       })
       .otherwise({
         redirectTo: '/'

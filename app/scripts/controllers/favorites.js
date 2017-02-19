@@ -19,7 +19,6 @@ contactsApp.controller('favoritesController', [
 			$scope.favorites = []
 
 			var promise = Contacts.getAll()
-
 			promise.then(function(response){
 				console.log(response)
 				$scope.favorites = response.data.filter(function (contact) {
@@ -30,11 +29,11 @@ contactsApp.controller('favoritesController', [
 
 		function addFavorites(data){
 			$scope.favorites.push(data.contact);
-		}
+		};
 
 		function  removeFavorites(data) {
 			var indexOfContact = $scope.favorites.map(function(x) {return x.id; }).indexOf(data.contact.id);
 			$scope.favorites.splice(indexOfContact, 1)
-		}
+		};
 	}
 ]);
