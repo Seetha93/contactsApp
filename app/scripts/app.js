@@ -8,7 +8,7 @@
  *
  * Main module of the application.
  */
-angular
+var contactsApp = angular
   .module('contactsApp', [
     'ngAnimate',
     'ngAria',
@@ -17,14 +17,21 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ngMaterial',
+    'md.data.table',
+    'PubSub'
   ])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
+        // controller: 'mainContactsController',
+        // controllerAs: 'mainContactsController'
+      })
+      .when('/favorites', {
+        templateUrl: 'views/favorites.html',
+        // controller: 'favoritesController'
       })
       .when('/about', {
         templateUrl: 'views/about.html',
