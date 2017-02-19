@@ -1,0 +1,30 @@
+[
+	{
+		"id" : 1,
+		"name" : "Sindhu",
+		"address" : "XYX, India",
+		"phone" : "8220683893",
+		"is_favorite" : true
+	},
+	{
+		"id" : 2,
+		"name" : "Mega",
+		"address" : "XYX, India",
+		"phone" : "9223466567",
+		"is_favorite" : false
+	},
+	{
+		"id" : 3,
+		"name" : "CD",
+		"address" : "XYX, India",
+		"phone" : "8765199085",
+		"is_favorite" : false
+	},
+	{
+		"id" : 4,
+		"name" : "Neha",
+		"address" : "XYX, India",
+		"phone" : "800099085",
+		"is_favorite" : true
+	}
+]

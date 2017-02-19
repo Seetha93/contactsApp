@@ -20,6 +20,7 @@ var contactsApp = angular
     'ngTouch',
     'ngMaterial',
     'md.data.table',
+    'angularInlineEdit',
     'PubSub'
   ])
   .config(function ($routeProvider) {

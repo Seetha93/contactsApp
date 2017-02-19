@@ -5,8 +5,8 @@
         <span>All Contacts</span>
     </div>
     <md-table-container>
-      <table md-table ng-model="selected" md-progress="promise">
-        <thead md-head md-order="query.order" md-on-reorder="getDesserts">
+      <table md-table md-progress="promise">
+        <thead md-head>
           <tr md-row>
             <th md-column md-order-by="nameToLower"><span>Name</span></th>
             <th md-column md-numeric md-order-by="calories.value"><span>Phone</span></th>
@@ -16,14 +16,31 @@
         </thead>
         <tbody md-body>
           <tr md-row md-select="dessert" md-select-id="name" md-auto-select ng-repeat="contact in contacts">
-            <td md-cell>{{contact.name}}</td>
-            <td md-cell>{{contact.phone}}</td>
-            <td md-cell>{{contact.address}}</td>
-            <!-- <td md-cell>{{dessert.carbs.value}}</td> -->
-            <td md-cell ng-if="contact.is_favorite == false"><button type="button" class="btn btn-default btn-sm" ng-click="addToFavorites(contact)" style="border: none;">
+            <td md-cell>
+              <span inline-edit="contact.name"
+                    inline-edit-placeholder="Type your name here"
+                    inline-edit-btn-edit=""
+                    inline-edit-on-blur="save"
+                    inline-edit-on-click></span>
+            </td>
+            <td md-cell>
+              <span inline-edit="contact.phone"
+                    inline-edit-placeholder="Type your phone number"
+                    inline-edit-btn-edit=""
+                    inline-edit-on-blur="save"
+                    inline-edit-on-click></span>
+            </td>
+            <td md-cell>
+              <span inline-edit="contact.address"
+                    inline-edit-placeholder="Type your address here"
+                    inline-edit-btn-edit=""
+                    inline-edit-on-blur="save"
+                    inline-edit-on-click></span>
+            </td>
+            <td md-cell ng-show="contact.is_favorite == false"><button type="button" class="btn btn-default btn-sm" ng-click="addToFavorites(contact)" style="border: none;">
               <span class="glyphicon glyphicon-heart-empty"></span>
             </button></td>
-            <td md-cell ng-if="contact.is_favorite == true"><button type="button" class="btn btn-default btn-sm" ng-click="removeFromFavorites(contact)" style="border: none; color: red;">
+            <td md-cell ng-show="contact.is_favorite == true"><button type="button" class="btn btn-default btn-sm" ng-click="removeFromFavorites(contact)" style="border: none; color: red;">
               <span class="glyphicon glyphicon-heart"></span>
             </button></td>
           </tr>
@@ -31,17 +48,17 @@
       </table>
     </md-table-container>
 
-    <md-table-pagination md-limit="query.limit" md-limit-options="[5, 10, 15]" md-page="query.page" md-total="{{contacts.count}}" md-on-paginate="getDesserts" md-page-select></md-table-pagination>
+    <!-- <md-table-pagination md-limit="query.limit" md-limit-options="[5, 10, 15]" md-total="{{contacts.count}}" md-on-paginate="getContacts" md-page-select></md-table-pagination> -->
 
     <div style="float: right;">
-      <button type="button" class="btn btn-default btn-sm" ng-click="addContact()">
+      <button type="button" class="btn btn-default btn-sm" ng-click="openAddContactDialog()">
         <span class="glyphicon glyphicon-plus-sign"></span> Add Contact
       </button>
     </div>
   </div>
   
   <!-- Favourites Section -->
-  <div class="col-lg-3 col-md-2 col-sm-12 col-xs-12" ng-controller="favoritesController">
+  <div class="col-lg-3 col-md-2 col-sm-12 col-xs-12" ng-controller="favoritesController" ng-init="initialize()">
     <div class="md-toolbar-tools">
         <span>Favourites</span>
     </div>
